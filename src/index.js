@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const bodyParser = require("body-parser");
 const fs = require("fs");
 
 // autoload apis
@@ -10,10 +11,12 @@ const apiNames = fs
 
 const app = express();
 
+app.use(bodyParser.json());
+
 app.use(
   cors({
-    origin: "*"
-  })
+    origin: "*",
+  }),
 );
 
 //create a server object:

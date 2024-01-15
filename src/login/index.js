@@ -4,24 +4,24 @@ const router = express.Router();
 router.post("/", function (req, res) {
   if (!req.body.email) {
     return res.status(400).send({
-      errorMessage: "Missing email"
+      errorMessage: "Missing email",
     });
   }
 
   if (!req.body.password) {
     return res.status(400).send({
-      errorMessage: "Missing password"
+      errorMessage: "Missing password",
     });
   }
 
   if (req.body.email === "rolo@gls.pt") {
     return res.status(200).send({
-      redirectUrl: "/login/success"
+      redirectUrl: "/login/success",
     });
   }
 
   return res.status(400).send({
-    errorMessage: "Unknown email"
+    errorMessage: "Unknown email",
   });
 });
 
